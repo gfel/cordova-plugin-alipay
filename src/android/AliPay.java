@@ -62,7 +62,7 @@ public class AliPay extends CordovaPlugin {
 
 			 //订单信息在服务端签名后返回
 			 final String payInfo = args.getString(0);
-			 final Int debug = Integer.parseInt(args.getString(1));
+			 final int debug = Integer.parseInt(args.getString(1));
 
 			 if (payInfo == null || payInfo.equals("") || payInfo.equals("null")) {
 				callbackContext.error("Please enter order information");
