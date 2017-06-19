@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
+import com.alipay.sdk.app.EnvUtils;
 
 public class AliPay extends CordovaPlugin {
 
@@ -61,7 +62,7 @@ public class AliPay extends CordovaPlugin {
 
 			 //订单信息在服务端签名后返回
 			 final String payInfo = args.getString(0);
-			 final Int debug = args.getString(1);
+			 final Int debug = Integer.parseInt(args.getString(1));
 
 			 if (payInfo == null || payInfo.equals("") || payInfo.equals("null")) {
 				callbackContext.error("Please enter order information");
