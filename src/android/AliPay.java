@@ -61,6 +61,7 @@ public class AliPay extends CordovaPlugin {
 
 			 //订单信息在服务端签名后返回
 			 final String payInfo = args.getString(0);
+			 final Int debug = args.getString(1);
 
 			 if (payInfo == null || payInfo.equals("") || payInfo.equals("null")) {
 				callbackContext.error("Please enter order information");
@@ -70,6 +71,9 @@ public class AliPay extends CordovaPlugin {
 			cordova.getThreadPool().execute(new Runnable() {
 				@Override
 				public void run() {
+					if (debug == 1) {
+						EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+					}
 					Log.i(TAG, " 构造PayTask 对象 ");
 					PayTask alipay = new PayTask(cordova.getActivity());
 					Log.i(TAG, " 调用支付接口，获取支付结果 ");
