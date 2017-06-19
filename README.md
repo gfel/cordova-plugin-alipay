@@ -5,7 +5,7 @@ for mobile payment with Alipay App or Mobile Web. Requires cordova-android 4.0 o
 
 ### ChangeLogs
   本cordova插件是基于支付宝App支付SDK的Demo实现
- - 升级支付宝SDK版本到20160825；
+ - 升级支付宝SDK版本到20170619；
  - 修改了一些bug;
  - 支持Android和iOS Alipay SDK
 ###主要功能
@@ -20,7 +20,7 @@ The following directions are for cordova-cli (most people).
 * Add this plugin
 
   ```sh
-  cordova plugin add https://github.com/offbye/cordova-plugin-alipay.git --variable PARTNER_ID=[你的商户PID可以在账户中查询]
+  cordova plugin add https://github.com/gfel/cordova-plugin-alipay.git --variable PARTNER_ID=[你的商户PID可以在账户中查询]
   ```
   （对于android，可以不传PARTNER_ID）
 
