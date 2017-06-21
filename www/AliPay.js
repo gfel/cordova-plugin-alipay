@@ -1,12 +1,12 @@
 var exec = require('cordova/exec');
 
-exports.pay = function (paymentInfo, successCallback, errorCallback, debug) {
+exports.pay = function (paymentInfo, successCallback, errorCallback) {
 	if (!debug) {
 		debug = 0;
 	}
 	if(!paymentInfo){
 		errorCallback && errorCallback("Please enter order information");  
 	}else{
-		exec(successCallback, errorCallback, "AliPay", "pay", [paymentInfo, debug]);
+		exec(successCallback, errorCallback, "AliPay", "pay", [paymentInfo]);
 	}
 };
